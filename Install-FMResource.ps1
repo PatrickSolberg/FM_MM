@@ -9,7 +9,7 @@ $tempFile = "$env:TEMP\example-skin.zip"
 # Example Resource
 $resourceName = "Example Skin"
 $resourceType = "Skin"
-$downloadUrl = ""  # Replace with real link
+$downloadUrl = "https://link.testfile.org/30MB"  # Replace with real link
 
 # Prompt user
 Write-Host "`n📦 You're about to download: $resourceName ($resourceType)" -ForegroundColor Cyan
@@ -45,7 +45,6 @@ try {
     Expand-Archive -Path $tempFile -DestinationPath $skinsFolder -Force
 } catch {
     Write-Host "❌ Extraction failed: $_" -ForegroundColor Red
-    Write-Host "Please try to extract it manually." -ForegroundColor Yellow
     exit
 }
 
