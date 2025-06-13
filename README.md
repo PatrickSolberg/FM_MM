@@ -15,6 +15,7 @@ Built in PowerShell, designed for automation and easy updates.
 - 🧾 Tracks installed mods in `installed_resources.json`
 
 > 🧪 Currently in early development
+> 
 > Supports CLI usage, scripting, or just click-and-run. Ideal for power users and newcomers alike.
 
 ---
