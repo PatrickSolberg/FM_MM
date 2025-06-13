@@ -1,0 +1,54 @@
+{
+  "resources": [
+    {
+      "id": "tato24_skin",
+      "name": "Tato24",
+      "expectedFilePattern": "Tato24*.fmf",
+      "url": "https://www.mediafire.com/file/blky33ag9bsaghq/Tato24v2.fmf/file",
+      "type": "manual",
+      "installPath": "skins",
+      "credit": "Wozzie (https://x.com/wozziefm)",
+      "category": "skins"
+    },
+    {
+      "id": "df11_faces",
+      "name": "DF11 Facepack",
+      "url": "https://www.df11faces.com/post/megapack-original-installation-manual",
+      "type": "manual_browser",
+      "installPath": "graphics/faces/DF11",
+      "credit": "DF11 Faces Team (https://www.df11faces.com)",
+      "note": "Requires torrent download from the official DF11 page. Cannot be mirrored.",
+      "category": "faces"
+    },
+    {
+      "id": "ss_kits_sortitoutsi",
+      "name": "SortitoutSI SS Kits",
+      "url": "https://sortitoutsi.net/graphics/style/2/ss-kits",
+      "type": "manual_browser",
+      "installPath": "graphics/kits",
+      "credit": "SortitoutSI (https://sortitoutsi.net)",
+      "note": "Requires login and manual download from SortitoutSI.",
+      "category": "kits"
+    },
+    {
+      "id": "realnamefix_fminside",
+      "name": "FMInside Real Name Fix 24.3",
+      "expectedFilePattern": "FMInside*names.fmf",
+      "url": "https://www.mediafire.com/file/yx7p7ye3s87xvv2/FMInside_-_Real_Club_%2526_Competition_names.fmf/file",
+      "type": "manual",
+      "installPath": "editor data",
+      "credit": "FMInside (https://fminside.net)",
+      "category": "realnamefix"
+    },
+    {
+      "id": "fmt_stadium_pack",
+      "name": "FMT Stadium Pack 22",
+      "expectedFilePattern": "FMT*Superpack*.rar",
+      "url": "https://www.mediafire.com/file/76222h1pukorgln/FMT_Stadium_Superpack_20.1.rar/file",
+      "type": "manual",
+      "installPath": "graphics/stadiums",
+      "credit": "Geordie1981",
+      "category": "stadiums"
+    }
+  ]
+}
