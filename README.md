@@ -1,101 +1,140 @@
-# ⚽ FM_MM – Football Manager Mod Manager (Windows)
+# ⚽ FM_MM – Football Manager Mod Manager (Windows, PowerShell 7+)
 
-A simple PowerShell-based installer for Football Manager 2024 resources like skins, logos, kits, and facepacks. Designed to automate the setup process with prompts and minimal user effort.
-
-## ✅ Features
-
-- Prompts the user for what to install
-- Downloads selected mods/resources
-- Automatically creates required folder structure
-- Extracts archives to the correct FM directory
-- Compatible with **PowerShell 7+ (pwsh)** on Windows
-
-> 🧪 Currently in early development — starting with skin installation as proof of concept.
+A simple, flexible mod installer for Football Manager 2024 resources like **skins, kits, faces, logos**, and more.  
+Built in PowerShell, designed for automation and easy updates.
 
 ---
 
-## 📂 Folder Structure
+## ✅ Features
 
-All downloads are placed in:
+- 🧠 **Interactive or fully automatic** installs with `-auto`
+- 🔍 **Category-based filtering** (`-install kits,faces`)
+- 📂 **Auto-creates folder structure** if missing
+- ⬇️ **Downloads files** and extracts `.zip` or `.rar` using 7-Zip
+- 💾 **Manual downloads** supported via browser link + pattern matching
+- 🧾 Tracks installed mods in `installed_resources.json`
+
+> Supports CLI usage, scripting, or just click-and-run. Ideal for power users and newcomers alike.
+
+---
+
+## 📁 Folder Structure
+
+Resources are installed into:
 
 ```
 Documents
 └── Sports Interactive/
-└── Football Manager 2024/
-└── graphics/
-├── skins/
-├── logos/
-├── faces/
-└── kits/
+    └── Football Manager 2024/
+        ├── skins/
+        ├── graphics/
+        │   ├── logos/
+        │   ├── faces/
+        │   └── kits/
+        └── ...
 ```
 
-These folders are automatically created if missing.
+---
+
+## 🚀 How to Use
+
+### 🖥️ Clone and run:
+
+```powershell
+git clone https://github.com/PatrickSolberg/FM_MM.git
+cd FM_MM
+.\Install-FMResource.ps1
+```
+
+Or use arguments for automation:
+
+```powershell
+# Install all resources without prompts
+.\Install-FMResource.ps1 -auto
+
+# Install only kits and faces
+.\Install-FMResource.ps1 -auto -install kits,faces
+```
 
 ---
 
-## 🛠️ How to Use Repo
+### 🌐 One-liner (from anywhere):
 
-1. **Clone or download this repo**
-
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/FM_MM.git
-    cd FM_MM
-    ```
-
-2. **Run the script in PowerShell 7+**
-
-    ```powershell
-    .\Install-FMResource.ps1
-    ```
-
-3. **Follow the on-screen prompts**
+```powershell
+irm "https://raw.githubusercontent.com/PatrickSolberg/FM_MM/master/Install-FMResource.ps1" | iex
+```
 
 ---
 
-4. **Or copy this to terminal (CLI)
-    ```
-    irm "https://raw.githubusercontent.com/PatrickSolberg/FM_MM/master/Install-FMResource.ps1" | iex
-    ```
+## 🧱 `resources.json` Format
+
+All installable resources are stored in a JSON file:
+
+```json
+{
+  "resources": [
+    {
+      "id": "df11_faces",
+      "name": "DF11 Faces Megapack",
+      "category": "faces",
+      "type": "manual",
+      "url": "https://df11faces.com",
+      "expectedFilePattern": "DF11*Faces*.zip",
+      "installPath": "graphics\\faces",
+      "credit": "DF11 (https://df11faces.com)"
+    }
+  ]
+}
+```
+
+Supports:
+- `type`: `manual`, `manual_browser`, or `direct`
+- `expectedFilePattern`: for auto-detecting local file downloads
+- `installPath`: relative to FM folder (like `graphics\\kits`)
+
 ---
 
-## 🔧 Requirements
+## 🧰 Requirements
 
-- Windows 10/11
-- PowerShell 7+ (`pwsh`)
-- Internet connection
-- Archive support (built-in `Expand-Archive`)
-
----
-
-## 🚧 Roadmap
-
-- [x] Base installer script
-- [ ] Menu for selecting resource types (faces, kits, logos, skins)
-- [ ] Source selection (SortitoutSI, FMScout, DF11)
-- [ ] Download progress with ETA
-- [ ] Dynamic scraping or config-driven download links
-- [ ] `.exe` wrapper (optional for non-PowerShell users)
+- ✅ Windows 10 or 11
+- ✅ PowerShell 7+ (install via [Microsoft Docs](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell))
+- ✅ Internet connection
+- ✅ [7-Zip](https://www.7-zip.org/) if using `.rar` resources
 
 ---
 
-## 📄 License
+## 🗺️ Roadmap
 
-MIT License — feel free to use, fork, and contribute.
+- [x] Modular `resources.json` with credits
+- [x] CLI flags: `-auto`, `-install`
+- [x] 7-Zip `.rar` extraction
+- [x] Manual browser download support
+- [ ] Hash checking (integrity)
+- [ ] Backup/reinstall existing resources
+- [ ] GitHub release installer / EXE wrapper
 
 ---
 
 ## 🤝 Contribute
 
-Pull requests are welcome!  
-Feel free to improve:
-- Resource selection UI
-- Error handling
-- Support for more mods/sources
+Pull requests welcome!
+
+Ideas:
+- Add a resource browser menu
+- Improve retry/downloader
+- Add new mod support (tactics, databases, etc.)
+
+---
+
+## 📜 License
+
+MIT License — open source, use it freely, just don’t sell it as your own.  
+Respect mod creators' rules when linking/distributing.
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is community-made and **not affiliated** with Sports Interactive or SEGA.  
-All third-party content belongs to their respective creators.  
-Please respect their terms of use and licenses.
+This project is not affiliated with SEGA or Sports Interactive.  
+Third-party resources belong to their respective authors.  
+Please follow each creator's terms of use.
