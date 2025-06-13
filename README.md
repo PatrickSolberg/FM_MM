@@ -18,7 +18,8 @@ A simple PowerShell-based installer for Football Manager 2024 resources like ski
 
 All downloads are placed in:
 
-Documents/
+```
+Documents
 └── Sports Interactive/
 └── Football Manager 2024/
 └── graphics/
@@ -26,13 +27,13 @@ Documents/
 ├── logos/
 ├── faces/
 └── kits/
-
+```
 
 These folders are automatically created if missing.
 
 ---
 
-## 🛠️ How to Use
+## 🛠️ How to Use Repo
 
 1. **Clone or download this repo**
 
@@ -49,6 +50,12 @@ These folders are automatically created if missing.
 
 3. **Follow the on-screen prompts**
 
+---
+
+4. **Or copy this to terminal (CLI)
+    ```
+    irm "https://raw.githubusercontent.com/PatrickSolberg/FM_MM/master/Install-FMResource.ps1" | iex
+    ```
 ---
 
 ## 🔧 Requirements
